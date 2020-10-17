@@ -1,0 +1,14 @@
+syntax = "proto2";
+package syncps_message;
+
+// Protobuf has no "outer" message type, so we need to put the TLV SyncpsContent
+// message inside an outer "typeless" SyncpsContentMessage.
+message SyncpsContentMessage {
+  message SyncpsContent {
+    // We use ProtobufTlv addTlv and getTlv to add/get the entire Data packet encoding.
+    repeated bytes publications = 6;
+  }
+
+  // A SyncpsContentMessage has one SyncpsContent.
+  required SyncpsContent syncps_content = 129;
+}

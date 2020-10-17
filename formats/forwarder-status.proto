@@ -1,0 +1,47 @@
+// Compile this file using:
+// protoc --cpp_out=. forwarder-status.proto
+
+syntax = "proto3";
+
+//option optimize_for = LITE_RUNTIME;
+
+package ndn_message;
+
+// Protobuf has no "outer" message type, so we need to put the TLV ForwarderStatus
+// message inside an outer "typeless" ForwarderStatusMessage
+message ForwarderStatusMessage {
+//  message ForwarderStatus {
+// TLVs from https://redmine.named-data.net/projects/nfd/wiki/ForwarderStatus
+// and ndn-cxx/ndn-cxx/encoding/tlv-nfd.hpp
+// Working from ndn-cxx/ndn-cxx/mgmt/nfd/forwarder-status.cpp  (wireEncode)
+  string nfdVersion = 128;
+  uint64 startTimestamp = 129;
+  uint64 currentTimestamp = 130;
+  uint64 nNameTreeEntries = 131;
+  uint64 nFibEntries = 132;
+  uint64 nPitEntries = 133;
+  uint64 nMeasurementsEntries = 134;
+  uint64 nCsEntries = 135;
+  uint64 nInInterests = 144;
+  uint64 nInData = 145;
+  uint64 nInNacks = 151;
+  uint64 nOutInterests = 146;
+  uint64 nOutData = 147;
+  uint64 nOutNacks = 152;
+  uint64 nSatisfiedInterests = 153;
+  uint64 nUnsatisfiedInterests = 154;
+  uint64 nnFragmentationErrors = 200;
+  uint64 nOutOverMtu = 201;
+  uint64 nInLpInvalid = 202;
+  uint64 nReassemblyTimeouts = 203;
+  uint64 nInNetInvalid = 204;
+  uint64 nAcknowledged = 205;
+  uint64 nRetransmitted = 206;
+  uint64 nRetxExhausted = 207;
+  uint64 nCongestionMarked = 208;
+// }
+ //This is the tlv::Content value
+// required ForwarderStatus forwarder_status = 128;
+}
+
+
