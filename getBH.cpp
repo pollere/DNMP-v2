@@ -133,6 +133,7 @@ void sendCommand(CRshim& shim)
  */
 int main(int argc, char* argv[])
 {
+    INIT_LOGGERS();
     // parse input line, exit if not a good probe directive
     if (argc <= 1) {
         help(argv[0]);

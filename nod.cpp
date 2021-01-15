@@ -72,6 +72,7 @@ static void usage(const char* cname)
 
 int main(int argc, char* argv[])
 {
+    INIT_LOGGERS();
     //initialization
     for (int c;
          (c = getopt_long(argc, argv, "dh", opts, nullptr)) != -1;) {
