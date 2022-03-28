@@ -1,5 +1,7 @@
 # Distributed Network Measurement Protocol (DNMP), ndn-ind library version
 
+This repository is for a project that is no longer active. It provided a foundation for aspects the on-going DCT work and was referenced in a publication, so remains up for now.
+
 This repository is for releases of  DNMP that use the ndn-ind library ([https://github.com/operantnetworks/ndn-ind](https://github.com/operantnetworks/ndn-ind)).  This in-progress work  builds on the proof-of-concept code developed under NIST SBIR 70NANB18H186 and makes use of Pollere's Versatile Security and Bespoke Transport projects. The current release doesn't have the full run-time security code included as parts of it are still being tested.
 
 DNMP has client and NOD (network observer daemon) processes that use NDN to communicate. Clients request measurements from NODs which use probe functions to gather metrics. The communication model is pub/sub, implemented by a lightweight pub/sub transport, syncps, and the DNMP-specific shim code.
